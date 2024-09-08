@@ -685,4 +685,3 @@ const wordList = [
         type: "adverb(suffix)"
     },
 ];
-];
