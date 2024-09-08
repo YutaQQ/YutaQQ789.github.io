@@ -41,7 +41,7 @@ const wordList = [
         type: "verb(prefix)"
     },
     {
-        word: "nonprofit",
+        word: "nonprofit", 
         hint: "Not intended to make a profit; an organization that doesn’t distribute profits to shareholders.",
         type: "noun(prefix)"
     },
@@ -324,8 +324,7 @@ const wordList = [
         hint: "In a smooth and elegant manner.",
         type: "adverb(suffix)"
     },
-    const wordList = [
-    // Prefixes
+   
     {
         word: "unnecessary",
         hint: "Not needed; more than is required.",
