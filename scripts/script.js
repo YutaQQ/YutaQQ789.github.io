@@ -4,11 +4,35 @@ const keyboardDiv = document.querySelector(".keyboard");
 const hangmanImage = document.querySelector(".hangman-box img");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = gameModal.querySelector("button");
-const wordTypeElement = document.querySelector(".word-type-text b"); // New element for word type
+const wordTypeElement = document.querySelector(".word-type-text b");
+
+// Audio elements for sound effects
+const correctSound = document.getElementById("correct-sound");
+const wrongSound = document.getElementById("wrong-sound");
+const winSound = document.getElementById("win-sound");
+const loseSound = document.getElementById("lose-sound");
 
 // Initializing game variables
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
+
+const leaderboard = [];
+const leaderboardList = document.getElementById('leaderboard-list');
+
+function updateLeaderboard(playerName, score) {
+    leaderboard.push({ name: playerName, score });
+    leaderboard.sort((a, b) => b.score - a.score);
+    leaderboard.splice(5); // Keep top 5 scores
+
+    displayLeaderboard();
+}
+
+function displayLeaderboard() {
+    leaderboardList.innerHTML = leaderboard.map(entry =>
+        `<li>${entry.name}: ${entry.score}</li>`
+    ).join('');
+}
+
 
 const resetGame = () => {
     // Resetting game variables and UI elements
@@ -24,43 +48,62 @@ const resetGame = () => {
 const getRandomWord = () => {
     // Selecting a random word and hint from the wordList
     const { word, hint, type } = wordList[Math.floor(Math.random() * wordList.length)];
-    currentWord = word; // Making currentWord as random word
+    currentWord = word; // Setting the current word
     document.querySelector(".hint-text b").innerText = hint;
     wordTypeElement.innerText = type; // Displaying the word type
     resetGame();
 }
 
 const gameOver = (isVictory) => {
-    // After game complete... showing modal with relevant details
+    // Game over: showing modal and playing the appropriate sound effect
     const modalText = isVictory ? `You found the word:` : 'The correct word was:';
     gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
     gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
     gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");
+
+    if (isVictory) {
+        winSound.play();
+    } else {
+        loseSound.play();
+    }
 }
 
 const initGame = (button, clickedLetter) => {
-    // Checking if clickedLetter exists in the currentWord
-    if(currentWord.includes(clickedLetter)) {
-        // Showing all correct letters on the word display
+    // Check if clickedLetter exists in the currentWord
+    if (currentWord.includes(clickedLetter)) {
+        // Play correct guess sound
+        correctSound.play();
+        
+        // Show all correct letters on the word display
         [...currentWord].forEach((letter, index) => {
-            if(letter === clickedLetter) {
+            if (letter === clickedLetter) {
                 correctLetters.push(letter);
-                wordDisplay.querySelectorAll("li")[index].innerText = letter;
-                wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
+                const letterElement = wordDisplay.querySelectorAll("li")[index];
+                letterElement.innerText = letter;
+                letterElement.classList.add("guessed"); // Add animation class
             }
         });
     } else {
-        // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
+        // Play wrong guess sound
+        wrongSound.play();
+        
+        // Update the wrongGuessCount and hangman image
         wrongGuessCount++;
         hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
     }
-    button.disabled = true; // Disabling the clicked button so user can't click again
+    
+    // Disable the clicked button so the user can't click it again
+    button.disabled = true; 
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 
-    // Calling gameOver function if any of these conditions are met
-    if(wrongGuessCount === maxGuesses) return gameOver(false);
-    if(correctLetters.length === currentWord.length) return gameOver(true);
+    // Check for game over conditions
+    if (wrongGuessCount === maxGuesses) {
+        return gameOver(false);
+    }
+    if (correctLetters.length === currentWord.length) {
+        return gameOver(true);
+    }
 }
 
 // Creating keyboard buttons and adding event listeners
@@ -89,7 +132,6 @@ const prefixes = {
     Adjective: ["anti-", "auto-", "bi-", "co-", "de-", "dis-", "extra-", "in-", "inter-", "mis-", "non-", "over-", "pre-", "re-", "semi-", "super-", "trans-", "un-"],
     Adverb: ["anti-", "auto-", "bi-", "co-", "de-", "dis-", "extra-", "in-", "inter-", "mis-", "non-", "over-", "pre-", "re-", "semi-", "super-", "trans-", "un-"]
 };
-
 
 const suffixes = {
     Noun: ["-able", "-al", "-ance", "-ant", "-ary", "-dom", "-er", "-est", "-hood", "-ing", "-ion", "-ism", "-ist", "-ity", "-ment", "-ness", "-or", "-ship", "-tion", "-ty", "-ure"],
