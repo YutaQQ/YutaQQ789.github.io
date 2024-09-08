@@ -323,5 +323,367 @@ const wordList = [
         word: "gracefully",
         hint: "In a smooth and elegant manner.",
         type: "adverb(suffix)"
-    }
+    },
+    const wordList = [
+    // Prefixes
+    {
+        word: "unnecessary",
+        hint: "Not needed; more than is required.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "inactive",
+        hint: "Not engaging in any physical activity or not working.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "disbelief",
+        hint: "Inability or refusal to accept that something is true.",
+        type: "noun(prefix)"
+    },
+    {
+        word: "preview",
+        hint: "To see or inspect something in advance.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "misunderstand",
+        hint: "To fail to interpret or understand something correctly.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "overcharge",
+        hint: "To charge someone too much for something.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "underestimate",
+        hint: "To estimate something as less than it is.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "nonsensical",
+        hint: "Having no meaning; making no sense.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "substandard",
+        hint: "Below the usual or required standard.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "interchange",
+        hint: "To swap or exchange one thing for another.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "postpone",
+        hint: "To delay or defer an event.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "biweekly",
+        hint: "Occurring every two weeks or twice a week.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "antibiotic",
+        hint: "A medicine that inhibits the growth of or destroys microorganisms.",
+        type: "noun(prefix)"
+    },
+    {
+        word: "extraordinary",
+        hint: "Very unusual or remarkable.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "semicircle",
+        hint: "Half of a circle or its circumference.",
+        type: "noun(prefix)"
+    },
+    {
+        word: "microorganism",
+        hint: "A microscopic organism, such as a bacterium, virus, or fungus.",
+        type: "noun(prefix)"
+    },
+    {
+        word: "multitask",
+        hint: "To perform multiple tasks simultaneously.",
+        type: "verb(prefix)"
+    },
+    {
+        word: "hyperactive",
+        hint: "Excessively active or energetic.",
+        type: "adjective(prefix)"
+    },
+    {
+        word: "underground",
+        hint: "Beneath the surface of the ground.",
+        type: "adverb(prefix)"
+    },
+    {
+        word: "inappropriate",
+        hint: "Not suitable or proper in the circumstances.",
+        type: "adjective(prefix)"
+    },
+
+    // Suffixes
+    {
+        word: "kindness",
+        hint: "The quality of being friendly, generous, and considerate.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "likable",
+        hint: "Easy to like or pleasant.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "jumping",
+        hint: "The action of jumping.",
+        type: "verb(suffix)"
+    },
+    {
+        word: "thankful",
+        hint: "Feeling or expressing gratitude.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "careless",
+        hint: "Not giving sufficient attention or thought to avoiding harm.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "brightness",
+        hint: "The quality of being bright.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "slowly",
+        hint: "In a manner that is slow.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "runner",
+        hint: "A person who runs, especially as a sport.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "smallest",
+        hint: "The superlative form of small.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "enlightenment",
+        hint: "The action of enlightening or the state of being enlightened.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "clarification",
+        hint: "The action of making a statement or situation less confused and more comprehensible.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "decision",
+        hint: "The conclusion or resolution reached after consideration.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "compromise",
+        hint: "An agreement or settlement of a dispute.",
+        type: "verb(suffix)"
+    },
+    {
+        word: "parenthood",
+        hint: "The state of being a parent.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "fellowship",
+        hint: "Friendly association, especially with people who share one's interests.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "stupidity",
+        hint: "The quality of being stupid.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "delicious",
+        hint: "Highly pleasing to the taste.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "criminal",
+        hint: "Relating to a crime or its punishment.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "active",
+        hint: "Engaging or ready to engage in physically energetic pursuits.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "economic",
+        hint: "Relating to economics or the economy.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "generosity",
+        hint: "The quality of being kind and generous.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "adventure",
+        hint: "An unusual, exciting, and possibly dangerous experience.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "modification",
+        hint: "The act or process of changing parts of something.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "precaution",
+        hint: "A measure taken in advance to prevent harm.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "assertive",
+        hint: "Having a confident and forceful personality.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "amendment",
+        hint: "A change or addition to a legal or statutory document.",
+        type: "noun(suffix)"
+    },
+    {
+        word: "enjoyable",
+        hint: "Giving pleasure or satisfaction.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "predictable",
+        hint: "Able to be predicted or anticipated.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "realistic",
+        hint: "Having or showing a sensible and practical idea of what can be achieved.",
+        type: "adjective(suffix)"
+    },
+    {
+        word: "completely",
+        hint: "Totally; in every way or as much as possible.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "joyfully",
+        hint: "In a joyful or happy manner.",
+        type: "adverb(suffix)"
+    },
+
+    // Adverbs
+    {
+        word: "calmly",
+        hint: "In a peaceful or composed manner.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "honorably",
+        hint: "In a manner showing high respect or esteem.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "truthfully",
+        hint: "In a manner that conveys the truth.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "loudly",
+        hint: "In a way that produces a large sound.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "patiently",
+        hint: "In a way that shows tolerance or patience.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "secretly",
+        hint: "In a hidden or concealed manner.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "playfully",
+        hint: "In a fun and lively way.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "attentively",
+        hint: "In a manner that pays close attention.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "reluctantly",
+        hint: "In an unwilling or hesitant manner.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "boldly",
+        hint: "In a confident and courageous manner.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "swiftly",
+        hint: "At high speed; quickly.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "politely",
+        hint: "In a respectful and considerate manner.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "desperately",
+        hint: "In a way that shows great urgency or despair.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "joyously",
+        hint: "In a manner that shows great joy.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "nervously",
+        hint: "In a manner showing worry or anxiety.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "clumsily",
+        hint: "In an awkward or uncoordinated manner.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "skillfully",
+        hint: "With great skill or expertise.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "peacefully",
+        hint: "In a manner free from disturbance.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "carelessly",
+        hint: "Without sufficient attention to avoiding harm.",
+        type: "adverb(suffix)"
+    },
+    {
+        word: "happily",
+        hint: "In a manner that shows contentment or joy.",
+        type: "adverb(suffix)"
+    },
+];
 ];
