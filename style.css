@@ -1,11 +1,13 @@
 /* Importing Google font - Open Sans */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
 }
+
 body {
     display: flex;
     padding: 0 10px;
@@ -14,6 +16,7 @@ body {
     min-height: 100vh;
     background: #5E63BA;
 }
+
 .container {
     display: flex;
     width: 850px;
@@ -24,17 +27,22 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease-in-out;
 }
+
 .hangman-box img {
     user-select: none;
     max-width: 270px;
+    animation: fadeIn 1s ease-in-out;
 }
+
 .hangman-box h1 {
     font-size: 1.45rem;
     text-align: center;
     margin-top: 20px;
     text-transform: uppercase;
 }
+
 .game-box .word-display {
     gap: 10px;
     list-style: none;
@@ -43,6 +51,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .word-display .letter {
     width: 28px;
     font-size: 2rem;
@@ -52,22 +61,28 @@ body {
     text-transform: uppercase;
     border-bottom: 3px solid #000;
 }
+
 .word-display .letter.guessed {
     margin: -40px 0 35px;
     border-color: transparent;
+    animation: bounceIn 0.5s ease-in-out;
 }
+
 .game-box h4 {
     text-align: center;
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 15px;
 }
+
 .game-box h4 b {
     font-weight: 600;
 }
+
 .game-box .guesses-text b {
     color: #ff0000;
 }
+
 .game-box .keyboard {
     display: flex;
     gap: 5px;
@@ -75,6 +90,7 @@ body {
     margin-top: 40px;
     justify-content: center;
 }
+
 :where(.game-modal, .keyboard) button {
     color: #fff;
     border: none;
@@ -85,18 +101,24 @@ body {
     border-radius: 4px;
     text-transform: uppercase;
     background: #5E63BA;
+    transition: background 0.3s ease;
 }
+
 .keyboard button {
     padding: 7px;
     width: calc(100% / 9 - 5px);
 }
+
 .keyboard button[disabled] {
     pointer-events: none;
     opacity: 0.6;
 }
+
 :where(.game-modal, .keyboard) button:hover {
     background: #8286c9;
+    animation: hoverBounce 0.3s ease;
 }
+
 .game-modal {
     position: fixed;
     top: 0;
@@ -113,11 +135,14 @@ body {
     padding: 0 10px;
     transition: opacity 0.4s ease;
 }
+
 .game-modal.show {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.4s 0.4s ease;
+    animation: fadeIn 0.8s ease-in-out;
 }
+
 .game-modal .content {
     padding: 30px;
     max-width: 420px;
@@ -127,25 +152,31 @@ body {
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
 .game-modal img {
     max-width: 130px;
     margin-bottom: 20px;
 }
+
 .game-modal img[src="images/victory.gif"] {
     margin-left: -10px;
 }
+
 .game-modal h4 {
     font-size: 1.53rem;
 }
+
 .game-modal p {
     font-size: 1.15rem;
     margin: 15px 0 30px;
     font-weight: 500;
 }
+
 .game-modal p b {
     color: #5E63BA;
     font-weight: 600;
 }
+
 .game-modal button {
     padding: 12px 23px;
 }
@@ -153,6 +184,48 @@ body {
 .word-type-text {
     font-size: 16px;
     margin: 10px 0;
+}
+
+/* Add animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes hoverBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(-10px);
+    }
+    30%, 50%, 70%, 90% {
+        transform: translateX(10px);
+    }
 }
 
 /* Add styles for the info modal */
@@ -251,6 +324,30 @@ body {
 
 .info-button:hover {
     background: #8286c9;
+}
+
+/* Add shake animation for wrong guesses */
+.wrong-guess {
+    animation: shake 0.5s ease-in-out;
+}
+
+#leaderboard {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#leaderboard h2 {
+    margin-bottom: 15px;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+#leaderboard-list li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
 
@@ -397,3 +494,4 @@ body {
         font-size: 1.3rem;
     }
 }
+
